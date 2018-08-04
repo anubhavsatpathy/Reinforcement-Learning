@@ -1,8 +1,10 @@
-import collections
+import gym
 
-dq = collections.deque([1,2,3])
-dq.append(4)
-print(dq)
-dq.popleft()
-print(dq)
-print(dq[-1])
+e = gym.make('CartPole-v0')
+e.reset()
+while True:
+    action = e.action_space.sample()
+    ns,r,d,i = e.step(action)
+    print(int(not d))
+    if d:
+        break

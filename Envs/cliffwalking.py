@@ -56,7 +56,7 @@ class CliffWalking():
 
         if new_state == self._goal_state:
             self._update_current_state(self._goal_state)
-            return (1,self._current_state,True,"You've Reached")
+            return (10,self._current_state,True,"You've Reached")
 
         self._update_current_state(new_state)
         return (-1,self._current_state,False,"Youre on your way")
